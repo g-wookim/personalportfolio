@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiwoo's Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/0214dfb56a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- HEADER AREA -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <h1 class="logo">JK</h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hello, I'm Jiwoo Kim, a self-taught <br><span class="span-color">Front-End Developer</span>.</br></h1>
+            </div>
+        </div>
+    </header>
+    <!-- ABOUT ME AREA -->
+    <section>
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-left">
+                        <h1 class="subtitle">About Me</h1>
+                        <p class="about-para1">
+                            I'm an passionate self-taught&nbsp;<span class="span-color">Front-End Developer</span>, primarily focused on HTML, CSS, and JavaScript. 
+                            I am eager to contribute my skills into meeting projects and collabrate with like-minded individuals. I am excited to leverage my skills into expanding my coding skillset.
+                            <!--Mention organizational, communication, and personability.-->
+                        </p>
+                        <p class="about-para2">
+                            Outside of coding, I enjoy talking with friends, playing video games competitively, using new technology to upgrade my setup, or watching basketball.
+                        </p>
+                    </div>
+                    <div class="about-col-right">
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('currently-working-on')">Currently Working On</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <div class="skills">HTML</div>
+                            <div class="skills">CSS</div>
+                            <div class="skills">JavaScript</div>
+                            <div class="skills">Python</div>
+                        </div>
+                        <div class="tab-contents" id="currently-working-on" id="skills">
+                            <div class="skills">React</div>
+                            <div class="skills">Node.JS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS AREA -->
+    <!-- CONTACT ME AREA -->
+    <section>
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="subtitle">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>logdotcom1234@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>(718) 640-4877</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/jiwoo-k-704188128/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/jwk0116"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://twitter.com/wl_dn1"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                        <a href="files/Jiwoo-Resume.pdf" download class="btn btn2">Download Resume</a>
+                    </div>
+                    <div class="contact-right">
+                        <form>
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER AREA -->
+    <section>
+        <div class="footer">
+            <p>Designed & Built with <i class="fa-regular fa-heart"></i> by Jiwoo Kim</p>
+        </div>
+    </section>
+
+
+<script>
+/* Script for changing between "Skills" & "Currently Working On" in "About Me" section */
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+</body>
+</html>
