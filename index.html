@@ -18,12 +18,14 @@
         <div class="container">
             <nav>
                 <h1 class="logo">JK</h1>
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <h1>Hello, I'm Jiwoo Kim, a self-taught <br><span class="span-color">Front-End Developer</span>.</br></h1>
@@ -38,12 +40,12 @@
                     <div class="about-col-left">
                         <h1 class="subtitle">About Me</h1>
                         <p class="about-para1">
-                            I'm an passionate self-taught&nbsp;<span class="span-color">Front-End Developer</span>, primarily focused on HTML, CSS, and JavaScript. 
+                            I'm an passionate self-taught&nbsp;<span class="span-color about-para1">Front-End Developer</span>, primarily focused on HTML, CSS, and JavaScript. 
                             I am eager to contribute my skills into meeting projects and collabrate with like-minded individuals. I am excited to leverage my skills into expanding my coding skillset.
                             <!--Mention organizational, communication, and personability.-->
                         </p>
                         <p class="about-para2">
-                            Outside of coding, I enjoy talking with friends, playing video games competitively, using new technology to upgrade my setup, or watching basketball.
+                            Outside of coding, I enjoy talking with friends, playing video games competitively, discovering new technology to upgrade my setup, or watching basketball.
                         </p>
                     </div>
                     <div class="about-col-right">
@@ -84,12 +86,13 @@
                         <a href="files/Jiwoo-Resume.pdf" download class="btn btn2">Download Resume</a>
                     </div>
                     <div class="contact-right">
-                        <form>
-                            <input type="text" name="Name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required autocomplete="on">
+                            <input type="email" name="Email" placeholder="Your Email" required autocomplete="on">
                             <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                             <button type="submit" class="btn btn2">Submit</button>
                         </form>
+                        <span id="msg"></span>
                     </div>
                 </div>
             </div>
@@ -119,5 +122,34 @@
     }
 </script>
 
+<script>
+ /*Script for opening and closing side menu when in mobile broswer*/
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu() {
+        sidemenu.style.right = "250px";
+    }
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzoaIyR_d5zWNWmfw_YelBuJ9BCTx7AMu1-7jd5FCvL9lsHQU0k5G90BSKU2GMmmcdGaA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully."
+            setTimeout(function() {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
 </body>
 </html>
