@@ -73,7 +73,8 @@ nav ul li a:hover::after {
 
 .header-text h1 {
     margin-top: 20px;
-    font-size: 60px;
+    font-size: 56px;
+    align-items: center;
 }
 
 .span-color {
@@ -148,7 +149,7 @@ nav ul li a:hover::after {
     font-size: 24px;
     background: rgba(153, 153, 153, 0.2);
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 500;
     color: #777;
 }
 
@@ -158,6 +159,7 @@ nav ul li a:hover::after {
 
 .tab-contents.active-tab {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .contact-left {
@@ -175,6 +177,28 @@ nav ul li a:hover::after {
 .contact-left p i {
     margin-right: 10px;
     font-size: 15px;
+}
+
+#projects {
+    padding: 50px 0;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    background: #202731;
+    border: 1px solid #f28f3b;
+    padding: 14px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fefcfb;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #f28f3b;
+    cursor: pointer;
 }
 
 .social-icons {
@@ -202,22 +226,6 @@ nav ul li a:hover::after {
 
 .contact-right form {
     width: 100%;
-}
-
-.btn {
-    display: block;
-    margin: 50px auto;
-    width: fit-content;
-    border: 1px solid #f28f3b;
-    padding: 14px 50px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #fefcfb;
-    transition: background 0.5s;
-}
-
-.btn:hover {
-    background: #f28f3b;
 }
 
 form input, form textarea {

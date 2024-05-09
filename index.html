@@ -21,15 +21,16 @@
                 <ul id="sidemenu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <h1>Hello, I'm Jiwoo Kim, a self-taught <br><span class="span-color">Front-End Developer</span>.</br></h1>
+                <h1>Hello, I'm Jiwoo Kim, a self-taught <span class="span-color">Front-End Developer</span>.</h1>
             </div>
+            <a href="#projects" class="btn">See More</a>
         </div>
     </header>
     <!-- ABOUT ME AREA -->
@@ -69,6 +70,14 @@
         </div>
     </section>
     <!-- PROJECTS AREA -->
+    <div id="projects">
+        <div class="container">
+            <div class="subtitle">My Projects</div>
+            <div class="project-list">
+                <div class="my-projects"></div>
+            </div>
+        </div>
+    </div>
     <!-- CONTACT ME AREA -->
     <section>
         <div id="contact">
@@ -79,7 +88,7 @@
                         <p><i class="fa-solid fa-paper-plane"></i>logdotcom1234@gmail.com</p>
                         <p><i class="fa-solid fa-phone"></i>(718) 640-4877</p>
                         <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/jiwoo-k-704188128/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/kim-jiwoo/"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="https://github.com/jwk0116"><i class="fa-brands fa-github"></i></a>
                             <a href="https://twitter.com/wl_dn1"><i class="fa-brands fa-twitter"></i></a>
                         </div>
@@ -126,7 +135,7 @@
  /*Script for opening and closing side menu when in mobile broswer*/
     var sidemenu = document.getElementById("sidemenu");
     function openmenu() {
-        sidemenu.style.right = "80px";
+        sidemenu.style.right = "0px";
     }
     function closemenu() {
         sidemenu.style.right = "-200px";
