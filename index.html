@@ -13,26 +13,30 @@
     <script src="https://kit.fontawesome.com/0214dfb56a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- HEADER AREA -->
+
+    <!-- STICKY NAV BAR -->
+    <nav id="nav-bar">
+        <h1 class="logo">JK</h1>
+        <ul id="sidemenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </nav>
+
+    <!-- HEADER SECTION -->
     <header id="header">
         <div class="container">
-            <nav>
-                <h1 class="logo">JK</h1>
-                <ul id="sidemenu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
             <div class="header-text">
                 <h1>Hello, I'm Jiwoo Kim, a self-taught <span class="span-color">Front-End Developer</span>.</h1>
             </div>
-            <a href="#projects" class="btn">See More</a>
+            <a href="#projects" class="btn">. . .</a>
         </div>
     </header>
+    
     <!-- ABOUT ME AREA -->
     <section>
         <div id="about">
@@ -46,7 +50,7 @@
                             <!--Mention organizational, communication, and personability.-->
                         </p>
                         <p class="about-para2">
-                            Outside of coding, I enjoy talking with friends, playing video games competitively, discovering new technology to upgrade my setup, or watching basketball.
+                            Outside of coding, I enjoy talking with friends, playing video games competitively, researching new techn to upgrade my setup, or watching basketball.
                         </p>
                     </div>
                     <div class="about-col-right">
@@ -69,15 +73,19 @@
             </div>
         </div>
     </section>
+
     <!-- PROJECTS AREA -->
-    <div id="projects">
-        <div class="container">
-            <div class="subtitle">My Projects</div>
-            <div class="project-list">
-                <div class="my-projects"></div>
+    <section>
+        <div id="projects">
+            <div class="container">
+                <div class="subtitle">My Projects</div>
+                    <div class="project-list">
+                        <div class="my-projects"></div>
+                    </div>
             </div>
         </div>
-    </div>
+    </section>
+
     <!-- CONTACT ME AREA -->
     <section>
         <div id="contact">
@@ -96,9 +104,9 @@
                     </div>
                     <div class="contact-right">
                         <form name="submit-to-google-sheet">
-                            <input type="text" name="Name" placeholder="Your Name" required autocomplete="on">
-                            <input type="email" name="Email" placeholder="Your Email" required autocomplete="on">
-                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <input type="text" name="Name" placeholder="Your name" required autocomplete="on">
+                            <input type="email" name="Email" placeholder="Your email" required autocomplete="on">
+                            <textarea name="Message" rows="6" placeholder="Your message..."></textarea>
                             <button type="submit" class="btn btn2">Submit</button>
                         </form>
                         <span id="msg"></span>
@@ -107,6 +115,7 @@
             </div>
         </div>
     </section>
+
     <!-- FOOTER AREA -->
     <section>
         <div class="footer">
@@ -114,51 +123,7 @@
         </div>
     </section>
 
+    <script src="index.js"></script>
 
-<script>
-/* Script for changing between "Skills" & "Currently Working On" in "About Me" section */
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname) {
-        for (tablink of tablinks) {
-            tablink.classList.remove("active-link");
-        }
-        for (tabcontent of tabcontents) {
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-</script>
-
-<script>
- /*Script for opening and closing side menu when in mobile broswer*/
-    var sidemenu = document.getElementById("sidemenu");
-    function openmenu() {
-        sidemenu.style.right = "0px";
-    }
-    function closemenu() {
-        sidemenu.style.right = "-200px";
-    }
-</script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzoaIyR_d5zWNWmfw_YelBuJ9BCTx7AMu1-7jd5FCvL9lsHQU0k5G90BSKU2GMmmcdGaA/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully."
-            setTimeout(function() {
-                msg.innerHTML = ""
-            }, 5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-</script>
 </body>
 </html>
