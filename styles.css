@@ -21,8 +21,12 @@ body {
     align-items: center;
     justify-content: space-between;
     position: sticky;
-    backdrop-filter: blur(14px);
+    background: #202731;
     z-index: 3;
+}
+#nav-bar.sticking {
+    box-shadow:  1px 1px 10px #161b22;
+    transition: box-shadow .3s;
 }
 #nav-bar ul li {
     display: inline-block;
@@ -40,12 +44,12 @@ body {
 }
 #nav-bar ul li a:hover {
     color: #f28f3b;
-    filter: drop-shadow(4px 4px #161b22);
+    text-shadow: 4px 4px 2px #161b22;
 }
 .logo {
     margin: 1rem 1rem;
     font-weight: 700;
-    filter: drop-shadow(4px 4px #161b22);
+    text-shadow: 4px 4px 2px #161b22;
 }
 
 /*-- HEADER SECTION --*/
@@ -111,11 +115,11 @@ body {
 }
 .tab-links.active-link {
     color: #f28f3b;
-    filter: drop-shadow(4px 4px #161b22);
+    text-shadow: 4px 4px 2px #161b22;
 }
 .tab-links:hover {
     color: #f28f3b;
-    filter: drop-shadow(4px 4px #161b22);
+    text-shadow: 4px 4px 2px #161b22;
 }
 .about-para1{
     font-size: 1.4rem;
@@ -175,12 +179,14 @@ body {
     text-decoration: none;
     color: #fefcfb;
     transition: all .5s;
-    
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 .btn:hover {
     background: #f28f3b;
     cursor: pointer;
-    filter: drop-shadow(10px 10px #222031);
+    box-shadow: 6px 6px 8px #161b22;
 }
 .social-icons {
     margin-top: 30px;
@@ -199,7 +205,11 @@ body {
 }
 .btn.btn2 {
     display: inline-block;
+    background: #2a3340;
+}
+.btn.btn2:hover {
     background: #f28f3b;
+    cursor: pointer;
 }
 .contact-right form {
     width: 100%;
