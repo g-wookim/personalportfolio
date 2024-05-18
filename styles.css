@@ -4,14 +4,21 @@
     font-family: 'Reddit Sans', sans-serif;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     background: #202731;
     color: #fefcfb;
+}
+body::-webkit-scrollbar {
+    width: .25rem;
+}
+body::-webkit-scrollbar-track {
+    background: #202731;
+}
+body::-webkit-scrollbar-thumb {
+    background: #161b22;
 }
 
 /*-- NAV BAR SECTION--*/
@@ -22,11 +29,12 @@ body {
     justify-content: space-between;
     position: sticky;
     background: #202731;
+    letter-spacing: 1px;
     z-index: 3;
 }
 #nav-bar.sticking {
     box-shadow:  1px 1px 10px #161b22;
-    transition: box-shadow .3s;
+    transition: all .3s;
 }
 #nav-bar ul li {
     display: inline-block;
@@ -80,7 +88,7 @@ body {
 
 /*-- ABOUT SECTION --*/
 #about {
-    padding: 80px 0;
+    padding: 50px 0;
     height: 100vh;
     background: #2a3340;
     justify-content: center;
@@ -110,8 +118,8 @@ body {
     font-weight: 700;
     cursor: pointer;
     position: relative;
-    text-transform: uppercase;
     transition:all .5s linear;
+    letter-spacing: 1px;
 }
 .tab-links.active-link {
     color: #f28f3b;
@@ -135,7 +143,7 @@ body {
     font-size: 24px;
     background: rgba(153, 153, 153, 0.2);
     border-radius: 5px;
-    font-weight: 500;
+    font-weight: 700;
     color: #777;
 }
 .tab-contents {
@@ -149,10 +157,66 @@ body {
 /*-- PROJECTS SECTION --*/
 #projects {
     padding: 50px 0;
+    height: 100vh;
+}
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.project {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 25rem;
+}
+.project img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #f28f3b);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a {
+    margin-top: 20px;
+    color: #f28f3b;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fefcfb;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.project:hover .layer {
+    height: 100%;
 }
 /*-- CONTACT SECTION --*/
 #contact {
-    
+    padding: 50px 0;
     background: #2a3340;
 }
 .contact-left {
@@ -202,6 +266,7 @@ body {
 .social-icons a:hover {
     color: #f28f3b;
     transform: translateY(-5px);
+    filter: drop-shadow(4px 4px 2px #161b22);
 }
 .btn.btn2 {
     display: inline-block;
