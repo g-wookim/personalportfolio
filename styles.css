@@ -173,7 +173,6 @@ body::-webkit-scrollbar-thumb {
 }
 .project img {
     height: 400px;
-    object-fit: cover;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;

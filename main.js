@@ -1,5 +1,3 @@
-
-
 const stickyNavBar = document.querySelector("#nav-bar");
 const scrollWatcher = document.createElement("div");
 
